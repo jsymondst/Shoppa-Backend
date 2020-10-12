@@ -24,6 +24,16 @@ default: &default
 development:
   <<: *default
   database: backend_01_development
+  host: localhost
+  user: <%= ENV.fetch("PSQL_USER") %>
+  password: <%= ENV.fetch("PSQL_PW") %>
+  # user: <%= ENV['PSQL_USER'] %>
+  # password: <%= ENV['PSQL_PW'] %>
+  # user: rails
+  # password: rails
+
+
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -58,6 +68,13 @@ development:
 test:
   <<: *default
   database: backend_01_test
+  host: localhost
+  user: <%= ENV.fetch("PSQL_USER") %>
+  password: <%= ENV.fetch("PSQL_PW") %>
+  # user: <%= ENV['PSQL_USER'] %>
+  # password: <%= ENV['PSQL_PW'] %>
+  # user: rails
+  # password: rails
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
