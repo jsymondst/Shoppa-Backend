@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get '/lists/', to: 'lists#index'
   post '/lists/', to: 'lists#create'
-  delete '/lists/:id', to: 'list#delete'
+  delete '/lists/:id', to: 'lists#delete'
   patch 'lists/:id', to: 'lists#update'
 
 end
