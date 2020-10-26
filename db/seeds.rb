@@ -11,7 +11,11 @@ jamie = User.create(username: "jamie", password: "jamie")
 
 puts "created Jamie"
 
-list_one = List.create(name: "Example List")
+key_string = SecureRandom.alphanumeric(8)
+
+list_one = List.create(name: "Example List", urlindex:key_string)
+
+
 
 Right.create(user:jamie, list: list_one)
 

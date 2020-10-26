@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_08_215106) do
+ActiveRecord::Schema.define(version: 2020_10_26_171313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2020_10_08_215106) do
   create_table "lists", force: :cascade do |t|
     t.string "name"
     t.string "icon"
+    t.string "urlindex"
   end
 
   create_table "rights", force: :cascade do |t|

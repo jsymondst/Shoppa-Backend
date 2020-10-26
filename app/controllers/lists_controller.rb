@@ -7,6 +7,13 @@ class ListsController < ApplicationController
                 name: list.name,
                 id:list.id,
                 icon:list.icon,
+                urlindex:list.urlindex,
+                items: list.items.map{|item|
+                    {
+                        name:item.name,
+                        category: item.category,
+                    }
+                }
             }
         }
         render json:{all_lists: all_lists}, status: :ok
@@ -23,6 +30,7 @@ class ListsController < ApplicationController
                 name: list.name,
                 list: list.id,
                 icon: list.icon,
+                urlindex:list.urlindex,
                 items: list.items.map{|item| {
                     name: item.name,
                     category: item.category,
