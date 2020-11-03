@@ -19,12 +19,16 @@ ActiveRecord::Schema.define(version: 2020_10_26_171313) do
     t.string "name"
     t.string "category"
     t.bigint "list_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["list_id"], name: "index_items_on_list_id"
   end
 
   create_table "lists", force: :cascade do |t|
     t.string "name"
     t.string "icon"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.string "urlindex"
   end
 
@@ -32,6 +36,8 @@ ActiveRecord::Schema.define(version: 2020_10_26_171313) do
     t.bigint "user_id", null: false
     t.bigint "list_id", null: false
     t.string "access"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["list_id"], name: "index_rights_on_list_id"
     t.index ["user_id"], name: "index_rights_on_user_id"
   end
@@ -39,6 +45,8 @@ ActiveRecord::Schema.define(version: 2020_10_26_171313) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "items", "lists"

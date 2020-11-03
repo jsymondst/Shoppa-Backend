@@ -4,6 +4,8 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :category
       t.references :list, null: false, foreign_key: true
+
+      t.timestamps
     end
   end
 end

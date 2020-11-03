@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get '/lists/', to: 'lists#index'
   post '/lists/', to: 'lists#create'
+  get '/lists/:index', to: 'lists#show'
   delete '/lists/:id', to: 'lists#delete'
   patch 'lists/:id', to: 'lists#update'
 

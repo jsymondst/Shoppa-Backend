@@ -9,7 +9,7 @@ class UsersController < ApplicationController
             puts payload
             render json: { user: UserSerializer.new(@user), jwt: payload }, status: :accepted
         else
-            render json: { message: "Invalid username or password" }, status: :unauthorized
+            render json: { error: "Invalid username or password" }, status: :unauthorized
         end
     end
 
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
             payload = encode_token({user_id: @user.id, username: @user.username})
             render json: { user: UserSerializer.new(@user), jwt:payload}, status: :accepted
         else
-            render json: {message: "User not created"}, status: :conflict
+            render json: {error: "User not created"}, status: :conflict
         end
     end
 
