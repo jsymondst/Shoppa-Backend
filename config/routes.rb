@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :exampleitems, only: [:index]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :users, only: [:create]
@@ -11,5 +12,6 @@ Rails.application.routes.draw do
   get '/lists/:index', to: 'lists#show'
   delete '/lists/:id', to: 'lists#delete'
   patch 'lists/:id', to: 'lists#update'
+  # get 'exampleitems/categories', to: "exampleitems#categories"
 
 end
